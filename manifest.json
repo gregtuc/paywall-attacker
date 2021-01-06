@@ -1,0 +1,13 @@
+{
+  "name": "paywall-murderer",
+  "version": "0.9",
+  "description": "kill paywalls and unwanted page elements in style",
+  "permissions": ["activeTab", "webRequest", "webRequestBlocking", "*://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*/**"],
+      "js": ["/js/jquery.min.js", "/js/socket.io.js", "contentScript.js"]
+    }
+  ],
+  "manifest_version": 2
+}
