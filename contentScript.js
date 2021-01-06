@@ -15,11 +15,6 @@ socket.on("ad-socket-response", function (data) {
   }
 });
 
-//ad-socket request
-function sendAdSocket() {
-  socket.emit("ad-socket", getSelectors());
-}
-
 //paywall-socket response
 socket.on("paywall-socket-response", function (data) {
   if (data) {
@@ -28,20 +23,52 @@ socket.on("paywall-socket-response", function (data) {
   }
 });
 
+//paywall-socket response
+socket.on("paywall-socket-response-code", function (code) {
+  if (code) {
+    executeSpecificCode(code);
+  }
+});
+
 //paywall-socket request
 function sendPaywallSocket() {
   socket.emit("paywall-socket", url);
+}
+
+//ad-socket request
+function sendAdSocket() {
+  socket.emit("ad-socket", getSelectors());
 }
 
 //Sanitizes bad elements.
 function sanitize(data) {
   for (var i = 0; i < data.length; i++) {
     try {
-      console.log("Killing " + `${data[i]}`);
       $(`.${data[i]}`).remove();
     } catch (e) {
       continue;
     }
+  }
+}
+
+//Executite code dished out from server in browser.
+function executeSpecificCode(code) {
+  for (var i = 0; i < code.length; i++) {
+    eval(code[i]);
+    new MutationObserver(() => {
+      try {
+        selectors.forEach((selector) => {
+          eval(code);
+        });
+      } catch (e) {
+        console.log(`Cannot remove element`);
+      }
+    }).observe(document, {
+      attributes: true,
+      childList: true,
+      characterData: true,
+      subtree: true,
+    });
   }
 }
 
@@ -50,7 +77,6 @@ function observeMutations(selectors) {
   new MutationObserver(() => {
     try {
       selectors.forEach((selector) => {
-        console.log("Removing: " + `${selector}`);
         $(`${selector}`).remove();
       });
     } catch (e) {

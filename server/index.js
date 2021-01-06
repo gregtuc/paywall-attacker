@@ -50,7 +50,6 @@ io.on("connection", function (socket) {
 
   socket.on("ad-socket", function (data) {
     console.log("Data received for AD-SOCKET...");
-
     const returnData = ad_processing.process(data);
     console.log("Data being returned for AD-SOCKET...");
     socket.emit("ad-socket-response", returnData);
@@ -59,7 +58,18 @@ io.on("connection", function (socket) {
   socket.on("paywall-socket", function (data) {
     console.log("Data received for PAYWALL-SOCKET...");
     const returnData = paywall_processing.process(data);
-    console.log("Data being returned for PAYWALL-SOCKET...");
-    socket.emit("paywall-socket-response", returnData);
+
+    try {
+      if (data[1] == 0) {
+        //Returning general list of selectors.
+        socket.emit("paywall-socket-response", returnData[0]);
+      } else {
+        //Returning site-specific code for the most stubborn of paywalls
+        socket.emit("paywall-socket-response-code", returnData[0]);
+      }
+      console.log("Data being returned for PAYWALL-SOCKET...");
+    } catch (e) {
+      console.log("Empty response.");
+    }
   });
 });
