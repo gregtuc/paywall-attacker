@@ -1,6 +1,5 @@
 # paywall-murderer
-chrome extension that very well may suplex paywalls and annoying page elements if it doesn't break the page first. That's a risk you'll have to take. 
-
+chrome extension that suplexes paywalls and annoying page elements
 To use it:
 1) Clone the repository and run "npm install".
 2) Enable developer mode in chrome://extensions and click and drag the directory onto the page.
