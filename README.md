@@ -6,8 +6,8 @@ To use it:
 3) Navigate to the server directory in paywall-attacker and run "npm run dev".
 
 This program pipes DOM content to the server and runs data through two filters:
-Filter 1) Site-specific filters. Mostly for high-profile journalism websites, this first filter quickly gets rid of paywalls and modals.
-Filter 2) General blacklist filtering. A fuzzy-match algorith is used to reject DOM elements that have a >=85% match with blacklisted classes and ID's. This helps to attack elements that had their names changed slightly to avoid detection.
+1) Site-specific filters. Mostly for high-profile journalism websites, this first filter quickly gets rid of paywalls and modals.
+2) General blacklist filtering. A fuzzy-match algorith is used to reject DOM elements that have a >=85% match with blacklisted classes and ID's. This helps to attack elements that had their names changed slightly to avoid detection.
 
 After identifying bad elements are reporting them to the client, JQuery is used to remove the elements and the Mutation Observer interface is used to track and prevent items from being re-injected after removal.
 
