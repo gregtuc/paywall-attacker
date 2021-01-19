@@ -58,9 +58,8 @@ io.on("connection", function (socket) {
   socket.on("paywall-socket", function (data) {
     console.log("Data received for PAYWALL-SOCKET...");
     const returnData = paywall_processing.process(data);
-
     try {
-      if (data[1] == 0) {
+      if (returnData[1] == 0) {
         //Returning general list of selectors.
         socket.emit("paywall-socket-response", returnData[0]);
       } else {
