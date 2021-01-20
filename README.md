@@ -11,7 +11,7 @@ This program pipes DOM content to the server and runs data through two filters:
 
 After bad elements are reported to the client, they are removed with JQuery and the Mutation Observer interface is used to track and prevent items from being re-injected after removal.
 
-Socket.io used for future implementation to monitor DOM content, websockets can be more scalable
+Socket.io used for future implementations on monitoring DOM, websockets can be more scalable.
 
 Website with paywalled content:
 ![Alt text](https://github.com/gregtuc/paywall-attacker/blob/main/images/example-image-2.png?raw=true "ImageOne")
