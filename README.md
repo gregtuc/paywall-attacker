@@ -22,6 +22,8 @@ Node.js, Socket.io, JQuery, Chrome Developer API.
 
 Socket.io used to allow multiple socket connections for multiple tabs + faster than standard requests.
 
+## Example
+
 ###### Website with paywalled content:
 ![Alt text](https://github.com/gregtuc/paywall-attacker/blob/main/images/example-image-2.png?raw=true "ImageOne")
 
