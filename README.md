@@ -1,9 +1,9 @@
 # paywall-attacker
 prototype chrome extension that removes paywalls and annoying overlays. This extension will be made more user-friendly moving forward (won't have to start a server in your command line)
 To use it:
-1) Clone the repository and run "npm install".
-2) Enable developer mode in chrome://extensions and click and drag the directory onto the page.
-3) Navigate to the server directory in paywall-attacker and run "npm run dev".
+1) Clone the repository, navigate to it in your terminal/cmd window (Ex: "cd Desktop/paywall-attacker"), and enter "npm install".
+2) Enable developer mode in chrome://extensions (switch in the top right of the window) and click and drag the directory onto the page.
+3) Navigate to the server directory (Ex: "cd server") in paywall-attacker and run "npm run dev".
 
 This program pipes DOM content to the server and runs data through two filters:
 1) Site-specific filters. Mostly for high-profile journalism websites, this first filter quickly gets rid of known paywalls/modals/overlays.
