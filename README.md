@@ -1,5 +1,5 @@
 # paywall-attacker
-prototype chrome extension that removes paywalls and annoying overlays. This extension will be made more user-friendly moving forward (won't have to start a server in your command line)
+prototype chrome extension that removes paywalls and annoying overlays. This extension will be made more user-friendly moving forward (won't have to start a server in your command line).
 To use it:
 1) Clone the repository, navigate to it in your terminal/cmd window (Ex: "cd Desktop/paywall-attacker"), and enter "npm install".
 2) Enable developer mode in chrome://extensions (switch in the top right of the window) and click and drag the directory onto the page.
