@@ -5,7 +5,7 @@ prototype chrome extension that removes paywalls and annoying overlays. This ext
 
 ## Installation
 - Clone the repository
-- Navigate to the repository in your terminal/cmd (Ex: `cd Desktop/paywall-attacker`).
+- Navigate to the repository in your terminal/cmd (Ex: `cd Desktop/paywall-attacker/server`).
 - Install the dependencies with `npm install`
 - Enable developer mode in chrome://extensions (see the switch in the top right of the window), and click and drag the directory onto the page.
 - Navigate to the server directory with `cd server` (in the project directory) and enter `npm run dev`.
